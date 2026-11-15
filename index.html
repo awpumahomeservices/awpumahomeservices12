@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore heating, cooling, heat pump, mini-split, furnace, boiler and electrical services from A.W. Puma Home Services for Worcester, Massachusetts homeowners.">
+  <meta name="theme-color" content="#102a2a">
+  <title>A.W. Puma Home Services | Worcester, MA Heating & Cooling</title>
+  <style>
+    :root {
+      --ink: #172b2b;
+      --muted: #617171;
+      --deep: #102a2a;
+      --green: #1d6256;
+      --lime: #c8e4a5;
+      --cream: #f6f5ef;
+      --paper: #ffffff;
+      --line: #e2e8e2;
+      --gold: #e7b86b;
+      --shadow: 0 18px 50px rgba(16,42,42,.09);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); text-underline-offset: 3px; }
+    a:hover { color: #123f37; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--deep); color: #eaf2e8; font-size: .88rem; }
+    .topbar .wrap { display:flex; justify-content:space-between; gap:16px; padding:9px 0; }
+    .topbar a { color:#eaf2e8; text-decoration:none; }
+    header { background: rgba(255,255,255,.94); border-bottom:1px solid var(--line); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:12px; color:var(--ink); text-decoration:none; font-weight:800; letter-spacing:-.03em; }
+    .brand-mark { width:42px; height:42px; display:grid; place-items:center; border-radius:14px; background:var(--green); color:white; font-size:1.05rem; }
+    .brand small { display:block; color:var(--muted); font-size:.68rem; font-weight:650; letter-spacing:.12em; text-transform:uppercase; }
+    .navlinks { display:flex; align-items:center; gap:24px; }
+    .navlinks a { color:var(--ink); text-decoration:none; font-size:.92rem; font-weight:650; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 19px; border-radius:999px; background:var(--lime); color:var(--deep); font-weight:800; text-decoration:none; border:0; transition:transform .2s, box-shadow .2s; }
+    .button:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,.12); color:var(--deep); }
+    .button.dark { background:var(--deep); color:white; }
+    .hero { position:relative; overflow:hidden; background:var(--deep); color:white; padding:88px 0 82px; }
+    .hero:before { content:""; position:absolute; width:540px; height:540px; border:1px solid rgba(200,228,165,.18); border-radius:50%; right:-120px; top:-230px; box-shadow:0 0 0 55px rgba(200,228,165,.035),0 0 0 110px rgba(200,228,165,.025); }
+    .hero-grid { position:relative; display:grid; grid-template-columns:1.25fr .75fr; gap:54px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--lime); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .eyebrow:before { content:""; width:26px; height:2px; background:var(--gold); }
+    h1 { max-width:780px; margin:18px 0 20px; font-size:clamp(2.5rem,5.4vw,4.65rem); line-height:1.04; letter-spacing:-.055em; }
+    .hero p { max-width:650px; color:#d4e0d9; font-size:1.12rem; margin:0 0 28px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .hero-note { border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); border-radius:var(--radius); padding:28px; backdrop-filter:blur(8px); }
+    .hero-note .big { display:block; color:var(--lime); font-size:2.6rem; font-weight:850; line-height:1; letter-spacing:-.05em; }
+    .hero-note p { margin:12px 0 0; font-size:.98rem; }
+    .trustline { display:flex; flex-wrap:wrap; gap:18px; margin-top:32px; color:#d4e0d9; font-size:.86rem; }
+    .trustline span:before { content:"✓"; color:var(--lime); font-weight:900; margin-right:7px; }
+    main { padding:64px 0 84px; }
+    section { scroll-margin-top:24px; }
+    .intro { max-width:800px; margin:0 auto 46px; text-align:center; }
+    .kicker { color:var(--green); font-size:.76rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    h2 { margin:9px 0 14px; font-size:clamp(1.9rem,3.4vw,2.8rem); line-height:1.14; letter-spacing:-.04em; }
+    h3 { margin:0 0 9px; font-size:1.22rem; line-height:1.3; letter-spacing:-.02em; }
+    h4 { margin:0 0 8px; }
+    .intro p, .section-lead { color:var(--muted); font-size:1.04rem; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .service { background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:25px; box-shadow:0 5px 20px rgba(16,42,42,.035); }
+    .service-icon { width:44px; height:44px; display:grid; place-items:center; margin-bottom:17px; border-radius:14px; background:#edf4e8; color:var(--green); font-size:1.3rem; }
+    .service p { color:var(--muted); margin:0; font-size:.96rem; }
+    .service ul { padding-left:19px; margin:13px 0 0; color:var(--muted); font-size:.93rem; }
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:42px; align-items:center; margin-top:76px; }
+    .feature-panel { padding:34px; background:#eaf0e7; border-radius:var(--radius); }
+    .feature-panel ul { padding-left:20px; margin-bottom:0; }
+    .feature-panel li { margin:8px 0; }
+    .area { margin-top:76px; padding:42px; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); }
+    .chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .chip { padding:8px 13px; border-radius:999px; background:#eff4ed; color:#31564d; font-size:.88rem; font-weight:700; }
+    .landmarks { color:var(--muted); }
+    .map-section { margin:76px auto 0; text-align:center; }
+    .map-frame { overflow:hidden; max-width:850px; margin:25px auto 0; border:8px solid white; border-radius:24px; box-shadow:var(--shadow); background:#e7ece7; }
+    .map-frame iframe { display:block; width:100%; height:430px; border:0; }
+    .map-caption { margin:13px auto 0; max-width:760px; color:var(--muted); font-size:.9rem; }
+    .season { margin-top:76px; }
+    .table-wrap { overflow-x:auto; background:white; border:1px solid var(--line); border-radius:18px; }
+    table { width:100%; border-collapse:collapse; min-width:520px; text-align:left; }
+    th,td { padding:17px 20px; border-bottom:1px solid var(--line); }
+    th { background:#edf3eb; color:var(--deep); font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; }
+    tr:last-child td { border-bottom:0; }
+    td:first-child { font-weight:800; }
+    .why { margin-top:76px; display:grid; grid-template-columns:.8fr 1.2fr; gap:40px; align-items:start; }
+    .why-list { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .why-item { background:white; border:1px solid var(--line); border-radius:16px; padding:19px; }
+    .why-item strong { display:block; margin-bottom:5px; }
+    .why-item span { color:var(--muted); font-size:.92rem; }
+    .faq { margin-top:76px; }
+    details { background:white; border:1px solid var(--line); border-radius:15px; padding:17px 20px; margin:11px 0; }
+    summary { cursor:pointer; font-weight:800; }
+    details p { color:var(--muted); margin:12px 0 2px; }
+    .cta { margin-top:76px; padding:46px; border-radius:26px; background:var(--deep); color:white; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .cta h2 { margin-top:0; }
+    .cta p { color:#d4e0d9; margin-bottom:0; }
+    .cta .button { flex-shrink:0; }
+    footer { background:#0b2020; color:#d4e0d9; padding:34px 0; }
+    .footer-inner { display:flex; justify-content:space-between; gap:25px; flex-wrap:wrap; }
+    footer a { color:var(--lime); }
+    .fine { color:#9fb3aa; font-size:.82rem; margin-top:15px; }
+    @media (max-width:850px) {
+      .hero-grid,.split,.why { grid-template-columns:1fr; }
+      .hero-note { max-width:520px; }
+      .service-grid { grid-template-columns:repeat(2,1fr); }
+      .navlinks { display:none; }
+      .cta { align-items:flex-start; flex-direction:column; }
+    }
+    @media (max-width:560px) {
+      .wrap { width:min(100% - 28px,1120px); }
+      .topbar .wrap { font-size:.78rem; }
+      .hero { padding:65px 0; }
+      main { padding:48px 0 60px; }
+      .service-grid,.why-list { grid-template-columns:1fr; }
+      .area,.feature-panel,.cta { padding:25px; }
+      .map-frame iframe { height:340px; }
+      .brand { font-size:.93rem; }
+      .nav .button { padding:10px 14px; font-size:.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <span>Heating • Cooling • Home Comfort</span>
+      <a href="tel:+16176183366">Call (617) 618-3366</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="A.W. Puma Home Services home">
+        <span class="brand-mark">AW</span>
+        <span>A.W. Puma Home Services<small>Worcester, Massachusetts</small></span>
+      </a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#service-area">Service Area</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQs</a>
+      </nav>
+      <a class="button dark" href="https://awpumahome.com/locations/worcester">Visit Company Site ↗</a>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Worcester County, Massachusetts</span>
+        <h1>Comfort at home.<br>Confidence in every season.</h1>
+        <p>A.W. Puma Home Services helps Worcester-area homeowners explore heating, cooling, heat pump and home comfort solutions built around their property and needs.</p>
+        <div class="hero-actions">
+          <a class="button" href="tel:+16176183366">Call (617) 618-3366</a>
+          <a class="button" style="background:transparent;color:white;border:1px solid rgba(255,255,255,.35)" href="#services">Explore Services ↓</a>
+        </div>
+        <div class="trustline">
+          <span>Heating & cooling solutions</span>
+          <span>Residential services</span>
+          <span>Worcester-area coverage</span>
+        </div>
+      </div>
+      <aside class="hero-note">
+        <span class="big">All-season</span>
+        <p>From cold New England winters to warm, humid summers, the right HVAC system can make everyday life at home more comfortable.</p>
+      </aside>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="intro">
+      <span class="kicker">Home comfort in Central Massachusetts</span>
+      <h2>Heating and cooling services for Worcester homes</h2>
+      <p>Worcester's housing ranges from historic homes to newer construction. Each property has different heating, cooling and electrical needs. A.W. Puma Home Services offers solutions to help homeowners plan repairs, replacements and equipment upgrades.</p>
+    </section>
+
+    <section id="services">
+      <div class="service-grid">
+        <article class="service">
+          <div class="service-icon">♨</div>
+          <h3>Heat Pump Installation & Service</h3>
+          <p>Heat pumps provide heating and cooling in one system. They may be a practical option when replacing older oil, propane or electric heating equipment. System selection should account for the home's layout and existing equipment.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">❄</div>
+          <h3>Ductless Mini-Splits</h3>
+          <p>Ductless systems can help condition spaces without existing ductwork, including older homes, finished basements, converted attics, additions and rooms with uneven temperatures.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">⌂</div>
+          <h3>Furnace Installation & Repair</h3>
+          <p>Unusual noises, uneven temperatures, frequent cycling and rising energy use can signal a furnace problem. A professional inspection can help identify whether repair or replacement makes sense.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">✳</div>
+          <h3>Air Conditioning</h3>
+          <p>Central air conditioning installation and service can help maintain comfortable indoor temperatures during warm Massachusetts summers. Proper equipment selection and installation matter.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">▤</div>
+          <h3>Boilers & Water Heaters</h3>
+          <p>Boilers remain common in Massachusetts homes. A.W. Puma advertises boiler repair, replacement and maintenance, along with traditional and tankless water heater solutions.</p>
+        </article>
+        <article class="service">
+          <div class="service-icon">⚡</div>
+          <h3>Electrical Panel Upgrades</h3>
+          <p>New HVAC equipment may require more electrical capacity than an older panel can provide. A.W. Puma lists an in-house licensed electrical crew for panel upgrades and publishes Massachusetts electrical license number 9116-EL-A1.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split" id="about">
+      <div>
+        <span class="kicker">A local service-area focus</span>
+        <h2>Solutions shaped around the home</h2>
+        <p class="section-lead">A historic property near Elm Park may have very different requirements from a newer home near the edges of the city. Existing ductwork, insulation, room layout and electrical capacity all influence which heating or cooling system is appropriate.</p>
+        <p class="section-lead">A.W. Puma Home Services was established in 2024 by Albert Puma, who brings 20 years of experience in construction and the trades. The company advertises heating, cooling and related home-comfort services for Worcester County.</p>
+        <p>Learn more about <a href="https://puma-wine.vercel.app/" target="_blank" rel="noopener noreferrer">A.W. Puma Home Services in Worcester</a>.</p>
+        <p>For background on the city, see <a href="https://en.wikipedia.org/wiki/Worcester,_Massachusetts" target="_blank" rel="noopener noreferrer">Worcester, Massachusetts</a>.</p>
+      </div>
+      <div class="feature-panel">
+        <h3>What homeowners can expect to discuss</h3>
+        <ul>
+          <li>Whether repair or replacement is the sensible next step.</li>
+          <li>Which equipment type suits the property's layout.</li>
+          <li>How airflow and temperature differences can be addressed.</li>
+          <li>Whether an electrical panel needs an upgrade for new equipment.</li>
+          <li>Whether current energy-efficiency incentives may apply.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="area" id="service-area">
+      <span class="kicker">Worcester and nearby communities</span>
+      <h2>Serving homeowners across Worcester County</h2>
+      <p class="section-lead">Worcester is a city of distinct neighborhoods and varied housing stock. A.W. Puma lists Worcester among its Massachusetts service locations. Confirm service availability for your exact address before scheduling.</p>
+      <div class="chips">
+        <span class="chip">Worcester</span><span class="chip">Shrewsbury</span><span class="chip">Fitchburg</span>
+        <span class="chip">Leominster</span><span class="chip">Milford</span><span class="chip">Southbridge</span><span class="chip">Webster</span>
+      </div>
+      <p class="landmarks" style="margin-top:24px">Whether you live near <strong>Elm Park</strong>, the <strong>Canal District</strong>, <strong>Main Street</strong> or the <strong>College of the Holy Cross</strong>, the best system for your home depends on its construction, current equipment and comfort goals. Polar Park and the DCU Center are also familiar landmarks in the city's wider community.</p>
+    </section>
+
+    <section class="map-section" aria-labelledby="map-title">
+      <span class="kicker">Find the Worcester location</span>
+      <h2 id="map-title">A.W. Puma Home Services on the map</h2>
+      <p class="section-lead">Use the embedded map to view the location associated with A.W. Puma Home Services in Worcester, Massachusetts.</p>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.7515442326226!2d-71.79947299999999!3d42.262478099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x51ffb070b00d79f%3A0x95958b932ff4defe!2sAW%20Puma%20Home%20Services%20Worcester!5e0!3m2!1sen!2s!4v1794732077434!5m2!1sen!2s"
+          width="600" height="450" style="border:0" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Google Map showing A.W. Puma Home Services Worcester">
+        </iframe>
+      </div>
+      <p class="map-caption">Map provided by Google Maps. Check the map listing and contact the company to confirm current business details and service availability.</p>
+    </section>
+
+    <section class="season">
+      <div class="intro" style="margin-bottom:25px">
+        <span class="kicker">A practical seasonal checklist</span>
+        <h2>Prepare your home for every season</h2>
+        <p>Routine attention can help catch comfort issues before peak heating or cooling weather arrives.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Season</th><th>Home comfort task</th></tr></thead>
+          <tbody>
+            <tr><td>Spring</td><td>Arrange an air-conditioning check and inspect or replace filters as recommended.</td></tr>
+            <tr><td>Summer</td><td>Pay attention to cooling performance, airflow and rooms that remain too warm.</td></tr>
+            <tr><td>Fall</td><td>Schedule furnace or boiler maintenance before sustained cold weather.</td></tr>
+            <tr><td>Winter</td><td>Watch for uneven heating, unusual system noises or changes in system operation.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-lead" style="margin-top:18px">Homeowners researching energy-efficient heating and cooling upgrades can review current programs and eligibility through <a href="https://www.masssave.com/" target="_blank" rel="noopener noreferrer">Mass Save</a>. Incentives, requirements and funding can change, so check current program terms before making a purchase.</p>
+    </section>
+
+    <section class="why">
+      <div>
+        <span class="kicker">Why contact A.W. Puma?</span>
+        <h2>Clear information before the work begins</h2>
+        <p class="section-lead">Heating and cooling equipment is a significant home investment. Ask questions, review the proposed scope and understand the available options before deciding on a repair or upgrade.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item"><strong>Straightforward pricing</strong><span>Ask for a clear explanation of the proposed work and costs.</span></div>
+        <div class="why-item"><strong>Repair-first discussion</strong><span>Understand whether a repair is practical before replacing equipment.</span></div>
+        <div class="why-item"><strong>Electrical support</strong><span>Discuss panel capacity when planning new HVAC equipment.</span></div>
+        <div class="why-item"><strong>Efficiency guidance</strong><span>Explore heat pump options and applicable incentive paperwork.</span></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="intro" style="margin-bottom:25px">
+        <span class="kicker">Helpful answers</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <details>
+        <summary>Does A.W. Puma Home Services serve Worcester, MA?</summary>
+        <p>Yes. Worcester is listed among the company's Massachusetts service locations. Contact the team to confirm coverage for your property address.</p>
+      </details>
+      <details>
+        <summary>Does the company install heat pumps?</summary>
+        <p>Heat pump installation and related heating and cooling solutions are among the company's advertised services. Ask about system options for your home's layout and existing equipment.</p>
+      </details>
+      <details>
+        <summary>Are ductless mini-splits suitable for older Worcester homes?</summary>
+        <p>They can be a useful option for homes without existing ductwork, additions and rooms that need independent temperature control. A site assessment can help determine suitability.</p>
+      </details>
+      <details>
+        <summary>Can A.W. Puma help with Mass Save rebates?</summary>
+        <p>The company advertises assistance with Mass Save rebate paperwork for qualifying energy-efficient equipment. Eligibility and available incentives depend on current program requirements.</p>
+      </details>
+      <details>
+        <summary>How can I request an estimate?</summary>
+        <p>Call (617) 618-3366 or use the company's Worcester location page to discuss your project and confirm service availability.</p>
+      </details>
+    </section>
+
+    <section class="cta">
+      <div>
+        <span class="eyebrow">Start with a conversation</span>
+        <h2>Planning an HVAC repair or upgrade?</h2>
+        <p>Talk with A.W. Puma Home Services about your Worcester-area property's heating and cooling needs.</p>
+      </div>
+      <a class="button" href="tel:+16176183366">Call (617) 618-3366 →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <strong>A.W. Puma Home Services</strong><br>
+        Worcester, Massachusetts service area
+        <div class="fine">Always There. Always Fair.</div>
+      </div>
+      <div>
+        <a href="tel:+16176183366">(617) 618-3366</a><br>
+        <a href="mailto:info@awpumahome.com">info@awpumahome.com</a><br>
+        <a href="https://awpumahome.com/locations/worcester">Company website</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
